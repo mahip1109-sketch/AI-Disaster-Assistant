@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Route Rakshak</title>
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- LEAFLET -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- ROUTING -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ONBOARDING -->
+<section id="onboarding">
+
+  <header class="topbar">
+
+    <div class="brand">
+      <div class="logoBox">🛡</div>
+      <h2>Route Rakshak</h2>
+    </div>
+    <div id="loginPage" class="loginPage">
+
+  <div class="loginCard">
+
+    <h1>Route Rakshak</h1>
+
+    <input type="text" id="loginName" placeholder="Enter your name">
+
+    <input type="tel" id="contact1" placeholder="Emergency Contact Number">
+
+    <button onclick="loginUser()">
+      Continue
+    </button>
+
+  </div>
+
+</div>
+    <button class="skipBtn" onclick="startApp()">
+      SKIP
+    </button>
+
+  </header>
+
+  <div class="glassCard">
+
+    <div class="stepText">
+      WOMEN SAFETY NAVIGATION
+    </div>
+
+    <div class="progressDots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="heroIcon">
+      🛡
+    </div>
+
+    <h1>
+      Route Rakshak
+    </h1>
+
+    <p>
+      AI-powered safe route navigation designed for women and vulnerable groups.
+      Travel confidently day or night.
+    </p>
+
+    <button class="mainBtn" onclick="startApp()">
+      Continue →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- APP -->
+<section id="app" class="hidden">
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- SEARCH -->
+  <div class="searchContainer">
+
+    <button class="menuBtn">
+      ⚙
+    </button>
+
+    <div class="searchBox">
+
+      <span>🔍</span>
+
+      <input
+        type="text"
+        id="destination"
+        placeholder="Search destination"
+      />
+
+    </div>
+
+  </div>
+
+
+  <!-- SIDE ACTIONS -->
+  <div class="sideActions">
+
+    <button onclick="focusLocation()">
+      ⌖
+    </button>
+
+    <button>
+      ◎
+    </button>
+
+    <button>
+      ⚠
+    </button>
+
+  </div>
+
+
+  <!-- SOS -->
+  <button class="sosButton" onclick="sendSOS()">
+    SOS
+  </button>
+
+
+  <!-- BOTTOM SHEET -->
+  <div class="bottomSheet" id="bottomSheet">
+
+    <div class="dragHandleWrap">
+      <div class="dragHandle" id="dragHandle"></div>
+    </div>
+
+    <span class="welcomeTag">
+      LIVE SAFETY STATUS
+    </span>
+
+    <h2>
+      Where would you like to go?
+    </h2>
+
+    <p>
+      We calculate safer routes using traffic density,
+      safe zones and nearby public locations.
+    </p>
+
+
+    <div class="statsGrid">
+
+      <div class="statCard">
+        <h3>12</h3>
+        <span>SAFE SPOTS</span>
+      </div>
+
+      <div class="statCard">
+        <h3>89%</h3>
+        <span>ROUTE SCORE</span>
+      </div>
+
+      <div class="statCard">
+        <h3>LIVE</h3>
+        <span>TRACKING</span>
+      </div>
+
+    </div>
+
+
+    <div class="actionRow">
+
+      <button class="routeButton" onclick="findRoute()">
+        ✈ Plan Safe Route
+      </button>
+
+      <button class="circleButton" onclick="shareLocation()">
+        👥 Circle
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LEAFLET -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- ROUTING -->
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
